@@ -15,7 +15,6 @@ This is a simple weather app built using TypeScript and React. It allows users t
 ## API used
 
 - [OpenWeatherMap](https://openweathermap.org/)
-- [IP-API](https://ip-api.com/)
 
 ## ICON used
 - [Meteocons](https://github.com/basmilius/weather-icons)
