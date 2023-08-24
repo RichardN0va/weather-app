@@ -286,7 +286,7 @@ span {
   margin-top: 30px;
 }
 
-.current_time span {
+.current_time time {
   font-weight: 600;
   font-size: 25px;
 }

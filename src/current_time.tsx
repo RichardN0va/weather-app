@@ -12,10 +12,10 @@ export const Clock = () => {
     }, []);
     return (
         <div className="current_time">
-            <span>
+            <time>
                 {date.toLocaleString()}
-            </span>
+            </time>
         </div>
-        
+
     );
 }
