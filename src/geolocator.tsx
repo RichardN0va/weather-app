@@ -1,9 +1,10 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { FaLocationArrow } from 'react-icons/fa'
 export const Geolocator = ({ setLocator }: any) => {
-    const [lat, setLat] = useState < number | null>(null);
-    const [lon, setLon] = useState<number | null>(null);
-    const handleGetLocation = () => {
+    const [lat, setLat] = useState<number>();
+    const [lon, setLon] = useState<number>();
+
+    useEffect(() => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
                 (position) => {
@@ -11,7 +12,6 @@ export const Geolocator = ({ setLocator }: any) => {
                     const longitude = position.coords.longitude;
                     setLat(latitude);
                     setLon(longitude);
-                    setLocator({lat: lat, lon: lon});
                 },
                 (error) => {
                     console.error("Error getting location:", error);
@@ -20,15 +20,19 @@ export const Geolocator = ({ setLocator }: any) => {
         } else {
             console.error("Geolocation is not supported by this browser.");
         }
-    };
-
+    })
     
+    const handleClick = () => {
+        setLocator({lat: lat, lon: lon})
+    }
+
+
     return (
         <div className="geolocator">
             <button
                 type='submit'
                 className="location_button"
-                onClick={handleGetLocation}
+                onClick={handleClick}
             ><FaLocationArrow size={20} /></button>
         </div>
 
