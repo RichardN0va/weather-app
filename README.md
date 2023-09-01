@@ -10,7 +10,7 @@ This is a simple weather app built using TypeScript and React. It allows users t
 
 ## Demo
 
-[Insert link to live demo or screenshots here]
+https://weather-app-sage-psi-93.vercel.app/
 
 ## API used
 
